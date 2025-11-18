@@ -1,18 +1,32 @@
 package org.sysimc.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jdk.jfr.BooleanFlag;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
+import java.util.Scanner;
 
-@
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
 
 public class Pessoa {
-//    private int id;
-    private String nome;
-    private Float altura;
-    private Float peso;
-    private Float imc;
-    private String classificacao;
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    public long id;
+
+    public String nome;
+    public Float altura;
+    public Float peso;
+    public Float imc;
+    public String classificacao;
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // CONSTRUTOR
 //    public Pessoa() {
@@ -84,30 +98,30 @@ public class Pessoa {
 
 
 
-
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", altura=" + altura +
-                ", peso=" + peso +
-                ", imc=" + imc +
-                ", classificacao='" + classificacao + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Pessoa)) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(id, pessoa.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
+//
+//    @Override
+//    public String toString() {
+//        return "Pessoa{" +
+//                "id=" + id +
+//                ", nome='" + nome + '\'' +
+//                ", altura=" + altura +
+//                ", peso=" + peso +
+//                ", imc=" + imc +
+//                ", classificacao='" + classificacao + '\'' +
+//                '}';
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (!(o instanceof Pessoa)) return false;
+//        Pessoa pessoa = (Pessoa) o;
+//        return Objects.equals(id, pessoa.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hashCode(id);
+//    }
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // CALCULAR IMC

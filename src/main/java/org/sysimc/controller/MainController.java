@@ -12,6 +12,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.sysimc.dao.PessoaDAO;
 import org.sysimc.model.Pessoa;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -56,10 +64,10 @@ public class MainController implements Initializable {
 
 
     // Objeto Modelo
-    Pessoa pessoa;
-    List<Pessoa> listaPessoas;
-    ObservableList<Pessoa> observableListPessoas;
-    PessoaDAO pessoaDAO;
+    private Pessoa pessoa;
+    private List<Pessoa> listaPessoas;
+    private ObservableList<Pessoa> observableListPessoas;
+    private PessoaDAO pessoaDAO = new PessoaDAO();
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     @Override

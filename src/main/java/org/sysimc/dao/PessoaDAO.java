@@ -68,13 +68,13 @@ public class PessoaDAO {
         }
     }
 
-    public void excluir(int id) {
+    public void excluir(long id) {
         String sql = "DELETE FROM pessoa WHERE id = ?";
 
         try (Connection conn = ConnectionPostgres.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setInt(1, id);
+            ps.setLong(1, id);
             ps.executeUpdate();
 
         } catch (SQLException e) {

@@ -6,7 +6,9 @@ module org.sysimc {
     requires java.sql;
     requires org.postgresql.jdbc;
     requires jdk.jfr;
-
+    requires static lombok;
+    requires jakarta.persistence;
+    opens org.sysimc.model to javafx.base;
 
     opens org.sysimc to javafx.fxml;
     exports org.sysimc;
